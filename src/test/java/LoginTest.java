@@ -30,4 +30,33 @@ public class LoginTest {
 
         driver.close();
     }
+
+    public void loginWithValidName() throws InterruptedException {
+        System.setProperty("webdriver.chrome.driver", "resources/chromedriver.exe");
+        WebDriver driver = new ChromeDriver();
+
+        driver.manage().window().maximize();
+        driver.get("http://testfasttrackit.info/selenium-test/");
+
+        driver.findElement(By.cssSelector("#header > div > div.skip-links > div > a > span.label")).click();
+        driver.findElement(By.cssSelector("#header-account > div > ul > li.last > a")).click();
+        driver.findElement(By.id("email")).sendKeys("remandaniel058@gmail.com");
+        driver.findElement(By.id("pass")).sendKeys("1230456");
+        driver.findElement(By.name("send")).click();
+        Thread.sleep(5000);
+        driver.quit();
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
 }
